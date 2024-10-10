@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://u81v3igtbnjq"]
+
+[ext_resource type="Texture2D" uid="uid://yneflh3o7f02" path="res://assets/shooting_arrow.png" id="1_7jrfa"]
+[ext_resource type="Script" path="res://scripts/direction_arrow.gd" id="1_jhkkb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2ku5"]
+radius = 371.058
+
+[node name="direction_arrow" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jhkkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t2ku5")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="weapon_pivot" type="Marker2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="weapon_pivot"]
+position = Vector2(16, 0)
+texture = ExtResource("1_7jrfa")
+
+[node name="shooting_point" type="Marker2D" parent="weapon_pivot/Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(5, 0)
+
+[node name="attack_speed" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="attack_speed" to="." method="_on_attack_speed_timeout"]
