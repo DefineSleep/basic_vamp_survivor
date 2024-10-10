@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="basic_vamp_survivor"
+config/version="0.4"
 run/main_scene="res://scenes/level_1.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://assets/icon.svg"
+boot_splash/image="res://assets/DS (1).png"
+config/icon="res://assets/game_icon.png"
 
 [autoload]
 
