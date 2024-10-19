@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://u20khdtx4caj"]
+
+[ext_resource type="Texture2D" uid="uid://boqclt70y6ihy" path="res://assets/game ui 1-bit.png" id="1_asfsp"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_l5cit"]
+[ext_resource type="Theme" uid="uid://dt4f57tpekhsr" path="res://assets/BUTTON_THEME.tres" id="4_2kxtg"]
+[ext_resource type="FontFile" uid="uid://byapgkvkwtehx" path="res://assets/1-bit game assets/m3x6.ttf" id="5_bx572"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkq7b"]
+atlas = ExtResource("1_asfsp")
+region = Rect2(416, 977, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1yg1"]
+atlas = ExtResource("1_asfsp")
+region = Rect2(208, 944, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xjgq"]
+atlas = ExtResource("1_asfsp")
+region = Rect2(32, 976, 16, 16)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchor_left = 0.285
+anchor_top = 0.116
+anchor_right = 0.717
+anchor_bottom = 0.565
+offset_left = -328.32
+offset_top = -75.168
+offset_right = 326.016
+offset_bottom = 281.88
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5cit")
+
+[node name="Button1" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 448.001
+offset_top = 192.0
+offset_right = 703.0
+offset_bottom = 226.0
+theme = ExtResource("4_2kxtg")
+text = "TEST BUTTON"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.285
+anchor_top = 0.116
+anchor_right = 0.717
+anchor_bottom = 0.565
+offset_left = -2.32007
+offset_top = -0.167999
+offset_right = 0.0159912
+offset_bottom = 1.88
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996
+anchor_bottom = 0.998
+offset_left = 1.52588e-05
+offset_top = -1.0
+offset_right = 1.99994
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_asfsp")
+region_rect = Rect2(33, 481, 78, 94)
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 35
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="menu_buttons" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.388556
+anchor_top = 0.296765
+anchor_right = 0.611445
+anchor_bottom = 0.475185
+offset_left = 0.384003
+offset_top = -0.304016
+offset_right = -0.384033
+offset_bottom = 0.0799866
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="menu_buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu_buttons/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="menu_buttons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="TextureButton2" type="TextureButton" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_dkq7b")
+
+[node name="Label" type="Label" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_bx572")
+text = "PLAY GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_p1yg1")
+
+[node name="Label3" type="Label" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_bx572")
+text = "UPGRADES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_4xjgq")
+
+[node name="Label2" type="Label" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_bx572")
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 56)
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="coin_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.321
+anchor_right = 0.569
+anchor_bottom = 0.356
+offset_left = -0.320007
+offset_top = -1.00801
+offset_right = 0.511963
+offset_bottom = -0.688004
+theme_override_fonts/font = ExtResource("5_bx572")
+text = "COINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="menu_buttons/MarginContainer/VBoxContainer/GridContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]

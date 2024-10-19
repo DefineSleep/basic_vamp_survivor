@@ -12,15 +12,14 @@ config_version=5
 
 config/name="basic_vamp_survivor"
 config/version="0.4"
-run/main_scene="res://scenes/level_1.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/image="res://assets/DS (1).png"
-config/icon="res://assets/game_icon.png"
+config/icon="res://assets/1-bit game assets/game_icon.png"
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
-EntityStats="*res://scripts/Entity_stats.gd"
 
 [global_group]
 

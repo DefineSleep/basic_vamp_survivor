@@ -102,7 +102,21 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_lcax1")
 text = "test"
 
+[node name="fps_label" type="Label" parent="CanvasLayer/topbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.097
+anchor_top = 0.103
+anchor_right = 0.145
+anchor_bottom = 0.897
+offset_left = 0.255997
+offset_top = 0.0129998
+offset_right = -0.0400085
+offset_bottom = 0.987
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="direction_arrow" parent="." instance=ExtResource("3_n7isq")]
+position = Vector2(0, 3)
 
 [node name="hurtbox" type="Area2D" parent="."]
 collision_layer = 0

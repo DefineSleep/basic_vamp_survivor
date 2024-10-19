@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	var attack_range = 200 #EntityStats.player_stats.attack_range
-	var speed = 200 #EntityStats.player_stats.bullet_speed
+	var attack_range = Global.player_data.player_range # attack range 
+	var speed = Global.player_data.bullet_speed # bullet speed
 	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * speed * delta
 	travel_distance += speed * delta 

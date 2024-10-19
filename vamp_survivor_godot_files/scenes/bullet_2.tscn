@@ -29,5 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

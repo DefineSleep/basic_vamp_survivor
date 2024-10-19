@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dk6cql2ydkjbd"]
+
+[ext_resource type="Texture2D" uid="uid://boqclt70y6ihy" path="res://assets/game ui 1-bit.png" id="1_6hlrf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ha66e"]
+texture = ExtResource("1_6hlrf")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(64, 576, 15, 14)
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_ha66e")

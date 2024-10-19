@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	var targeted_enemy = get_closest_group_member("enemy")
 	if targeted_enemy != null:
 		look_at(targeted_enemy.global_position)
-	attack_speed_timer.wait_time = EntityStats.player_stats.attack_speed
+	attack_speed_timer.wait_time = Global.player_data.attack_speed  # ATTACK SPEED
 
 
 func shoot():
@@ -36,7 +36,7 @@ func _on_attack_speed_timeout() -> void:
 
 func get_closest_group_member(group_name: String) -> Node2D:
 	var closest_member: Node2D = null
-	var closest_distance: float = INF  # Start with a very large distance
+	var closest_distance: float = INF  # start with a very large distance
 
 	# Get the position of the current node (assumed to be Node2D or derived)
 	var my_position: Vector2 = global_position

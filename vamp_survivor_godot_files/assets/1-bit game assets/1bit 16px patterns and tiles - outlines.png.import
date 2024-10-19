@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8hii5mnn2623"
-path="res://.godot/imported/game_icon.png-7ebed06a065e5637c7de2f772b299184.ctex"
+uid="uid://bdrkcw2tvujub"
+path="res://.godot/imported/1bit 16px patterns and tiles - outlines.png-638c92883c0995cecf58ec7aac24f9b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game_icon.png"
-dest_files=["res://.godot/imported/game_icon.png-7ebed06a065e5637c7de2f772b299184.ctex"]
+source_file="res://assets/1-bit game assets/1bit 16px patterns and tiles - outlines.png"
+dest_files=["res://.godot/imported/1bit 16px patterns and tiles - outlines.png-638c92883c0995cecf58ec7aac24f9b5.ctex"]
 
 [params]
 

@@ -4,16 +4,17 @@ signal health_depleted
 
 @onready var score: Label = $CanvasLayer/topbar/score
 @onready var hurtbox: Area2D = $hurtbox
+@onready var fps_label: Label = $CanvasLayer/topbar/fps_label
 
 @onready var health_bar: ProgressBar = $CanvasLayer/topbar/ProgressBar
 
 
-var max_health = 100 #EntityStats.player_stats.max_health
+var max_health = Global.player_data.player_hp # PLAYER HEALTH
 var current_health = max_health
 
 
 #var player_range = get_range()
-var char_speed : int = 100
+var char_speed : int = Global.player_data.player_movement_speed # PLAYER SPEED
 var last_direction : Vector2 
 
 func _ready() -> void:
@@ -22,11 +23,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	fps_label.text = str(Engine.get_frames_per_second())
 	health_bar.value = current_health
 	get_better_inputs()
 	move_and_slide()
-	score.text = "Score:"+str(Global.enemies_killed)
-	var damage_rate = 100.0
+	score.text = "Coins:"+str(Global.player_data.player_money)
+	var damage_rate = Global.player_data.bullet_damage # PLAYER DAMAGE
 	var overlapping_mobs = hurtbox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		current_health -= damage_rate * overlapping_mobs.size() * delta

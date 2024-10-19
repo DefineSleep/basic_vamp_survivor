@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dt4f57tpekhsr"]
+
+[ext_resource type="Texture2D" uid="uid://boqclt70y6ihy" path="res://assets/game ui 1-bit.png" id="1_jht35"]
+[ext_resource type="FontFile" uid="uid://s4gwxh01dhpf" path="res://assets/1-bit game assets/m6x11.ttf" id="1_n4puq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovrq2"]
+texture = ExtResource("1_jht35")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(201, 753, 94, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imwa7"]
+texture = ExtResource("1_jht35")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(201, 753, 94, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma280"]
+texture = ExtResource("1_jht35")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(33, 753, 94, 22)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_n4puq")
+Button/styles/hover = SubResource("StyleBoxTexture_ovrq2")
+Button/styles/normal = SubResource("StyleBoxTexture_imwa7")
+Button/styles/pressed = SubResource("StyleBoxTexture_ma280")
