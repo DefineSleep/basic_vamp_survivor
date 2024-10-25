@@ -324,5 +324,14 @@ theme_override_fonts/font = ExtResource("4_8u7uw")
 theme_override_font_sizes/font_size = 100
 text = "GAME OVER"
 
+[node name="back_to_menu" type="Button" parent="game_over_screen"]
+process_mode = 2
+offset_left = 511.0
+offset_top = 484.0
+offset_right = 639.0
+offset_bottom = 515.0
+text = "BACK TO MENU"
+
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="game_over_screen/back_to_menu" to="." method="_on_back_to_menu_pressed"]

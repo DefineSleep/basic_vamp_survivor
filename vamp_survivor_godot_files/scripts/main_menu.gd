@@ -9,8 +9,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	coin_label.text = str(Global.player_data.player_money)
+	coin_label.text = "$ :"+str(Global.player_data.player_money)
 
 
 func _on_texture_button_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+
+
+func _on_save_pressed() -> void:
+	Global.save_game()
+
+
+func _on_load_pressed() -> void:
+	Global.load_game()
+
+
+func _on_shop_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/shop_menu.tscn")

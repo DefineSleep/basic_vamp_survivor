@@ -112,7 +112,7 @@ text = "PLAY GAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
+[node name="shop_button" type="TextureButton" parent="menu_buttons/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_p1yg1")
 
@@ -155,4 +155,31 @@ text = "COINS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="save" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.383681
+anchor_top = 0.441358
+anchor_right = 0.417535
+anchor_bottom = 0.476852
+offset_right = 8.0
+offset_bottom = 8.0
+text = "SAVE"
+metadata/_edit_use_anchors_ = true
+
+[node name="load" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.439236
+anchor_top = 0.442901
+anchor_right = 0.477431
+anchor_bottom = 0.478395
+offset_right = 8.0
+offset_bottom = 8.0
+text = "LOAD"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="menu_buttons/MarginContainer/VBoxContainer/GridContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="menu_buttons/MarginContainer/VBoxContainer/GridContainer/shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]

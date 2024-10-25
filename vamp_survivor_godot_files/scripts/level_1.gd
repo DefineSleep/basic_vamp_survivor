@@ -75,3 +75,9 @@ func _on_spawn_timer_timeout() -> void:
 func _on_player_health_depleted() -> void:
 	game_over_screen.visible = true
 	get_tree().paused = true
+
+
+func _on_back_to_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
