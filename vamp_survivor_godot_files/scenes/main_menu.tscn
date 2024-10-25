@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://u20khdtx4caj"]
+[gd_scene load_steps=9 format=3 uid="uid://u20khdtx4caj"]
 
 [ext_resource type="Texture2D" uid="uid://boqclt70y6ihy" path="res://assets/game ui 1-bit.png" id="1_asfsp"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_l5cit"]
 [ext_resource type="Theme" uid="uid://dt4f57tpekhsr" path="res://assets/BUTTON_THEME.tres" id="4_2kxtg"]
 [ext_resource type="FontFile" uid="uid://byapgkvkwtehx" path="res://assets/1-bit game assets/m3x6.ttf" id="5_bx572"]
+[ext_resource type="PackedScene" uid="uid://bqmqndg15b1od" path="res://scenes/animations.tscn" id="5_upibx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkq7b"]
 atlas = ExtResource("1_asfsp")
@@ -142,10 +143,10 @@ zoom = Vector2(2, 2)
 [node name="coin_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535
-anchor_top = 0.321
-anchor_right = 0.569
-anchor_bottom = 0.356
+anchor_left = 0.295417
+anchor_top = 0.137358
+anchor_right = 0.329417
+anchor_bottom = 0.172358
 offset_left = -0.320007
 offset_top = -1.00801
 offset_right = 0.511963
@@ -154,6 +155,7 @@ theme_override_fonts/font = ExtResource("5_bx572")
 text = "COINS"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Button" parent="."]
 layout_mode = 1
@@ -179,7 +181,17 @@ offset_bottom = 8.0
 text = "LOAD"
 metadata/_edit_use_anchors_ = true
 
+[node name="animations" parent="." instance=ExtResource("5_upibx")]
+
+[node name="ColorRect" parent="animations" index="0"]
+self_modulate = Color(1, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="pressed" from="menu_buttons/MarginContainer/VBoxContainer/GridContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="menu_buttons/MarginContainer/VBoxContainer/GridContainer/shop_button" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
+[connection signal="animation_finished" from="animations" to="." method="_on_animations_animation_finished"]
+
+[editable path="animations"]

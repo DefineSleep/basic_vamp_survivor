@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://dndoh24yq8lab"]
+[gd_scene load_steps=9 format=3 uid="uid://d4fyuxwit6jht"]
 
-[ext_resource type="Script" path="res://scripts/bullet_level_2.gd" id="1_i0tl7"]
-[ext_resource type="Texture2D" uid="uid://ch6gyqypjwehj" path="res://assets/1-bit game assets/All_Fire_Bullet_Pixel_16x16_06.png" id="2_3mo2o"]
+[ext_resource type="Script" path="res://scripts/bullet_2.gd" id="1_xw28r"]
+[ext_resource type="Texture2D" uid="uid://ch6gyqypjwehj" path="res://assets/1-bit game assets/All_Fire_Bullet_Pixel_16x16_06.png" id="2_5yjku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxoft"]
 size = Vector2(4, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pn788"]
-atlas = ExtResource("2_3mo2o")
+atlas = ExtResource("2_5yjku")
 region = Rect2(416, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66hwj"]
-atlas = ExtResource("2_3mo2o")
+atlas = ExtResource("2_5yjku")
 region = Rect2(432, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u2o43"]
-atlas = ExtResource("2_3mo2o")
+atlas = ExtResource("2_5yjku")
 region = Rect2(448, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kskvp"]
-atlas = ExtResource("2_3mo2o")
+atlas = ExtResource("2_5yjku")
 region = Rect2(464, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yq382"]
@@ -42,17 +42,18 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="bullet_2" type="Area2D"]
+[node name="Bullet2" type="Area2D"]
 top_level = true
 rotation = 0.0036144
 collision_layer = 0
 collision_mask = 3
-script = ExtResource("1_i0tl7")
+script = ExtResource("1_xw28r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pxoft")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -69,7 +70,6 @@ grow_vertical = 2
 visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(-4.99997, 0.018072)
 sprite_frames = SubResource("SpriteFrames_yq382")
 autoplay = "default"

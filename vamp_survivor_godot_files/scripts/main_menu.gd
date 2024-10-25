@@ -1,7 +1,8 @@
 extends Control
 @onready var coin_label: Label = $coin_label
-
-
+@onready var animations: AnimationPlayer = $animations
+const SHOP_MENU = preload("res://scenes/shop_menu.tscn")
+const LEVEL_1 = preload("res://scenes/level_1.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	animations.play("fade_out")
 
 
 func _on_save_pressed() -> void:
@@ -25,4 +26,8 @@ func _on_load_pressed() -> void:
 
 
 func _on_shop_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/shop_menu.tscn")
+	pass
+
+
+func _on_animations_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_packed(LEVEL_1)

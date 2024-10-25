@@ -15,6 +15,8 @@ var enemy_spawn_count : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
+	
 	timer.autostart = true
 	timer.wait_time = 1
 	timer.start()
