@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/direction_arrow.gd" id="1_jhkkb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2ku5"]
-radius = 371.058
+radius = 297.379
 
 [node name="direction_arrow" type="Area2D"]
 collision_layer = 0
